@@ -1,0 +1,16 @@
+<mat-card>
+    <ul class="list-group" *ngIf="todoarr.length > 0; else nodata">
+        <li *ngFor="let todo of todoarr; trackBy : trackbyfun" class="list-group-item d-flex justify-content-between">
+            <strong>{{todo.title}}</strong>
+            <div>
+                <button 
+                (click)="onEdit(todo)"
+                mat-mini-fab color="primary" class="mr-3"><mat-icon>edit</mat-icon></button>
+                <button (click)="onRemove(todo.todoid)" mat-mini-fab color="warn"><mat-icon>delete</mat-icon></button>
+            </div>
+        </li>
+    </ul>
+    <ng-template #nodata>
+        <p class="alert alert-info">No data is added yet!!!!</p>
+    </ng-template>
+</mat-card>
