@@ -13,6 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { GetconfirmComponent } from './shaired/components/getconfirm/getconfirm.component';
+import { StudentDashboardComponent } from './shaired/components/student-dashboard/student-dashboard.component';
+import { StudentListComponent } from './shaired/components/student-list/student-list.component';
+import { StudentFormComponent } from './shaired/components/student-form/student-form.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,10 @@ import { GetconfirmComponent } from './shaired/components/getconfirm/getconfirm.
     TodoDashboardCompComponent,
     TodoFormCompComponent,
     TodoListCompComponent,
-    GetconfirmComponent
+    GetconfirmComponent,
+    StudentDashboardComponent,
+    StudentListComponent,
+    StudentFormComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +37,8 @@ import { GetconfirmComponent } from './shaired/components/getconfirm/getconfirm.
     MatIconModule,
     FormsModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

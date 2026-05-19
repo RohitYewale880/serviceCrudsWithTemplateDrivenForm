@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoserviceService } from '../../service/todoservice.service';
-import { Itodo } from '../../models/todo';
 import { SnakbarService } from '../../service/snakbar.service';
 import { MatDialog } from '@angular/material/dialog';
 import { GetconfirmComponent } from '../getconfirm/getconfirm.component';
+import { Itodo } from '../../models/ofreturn';
 
 @Component({
   selector: 'app-todo-list-comp',

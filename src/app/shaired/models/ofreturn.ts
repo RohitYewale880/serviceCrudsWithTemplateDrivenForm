@@ -1,6 +1,20 @@
-import { Itodo } from "./todo";
 
-export interface Ires{
+
+export interface Ires<T>{
     msg:string;
-    data:Itodo
+    data:T
+}
+
+export interface Istd{
+    id: string;
+    fname: string;
+    lname: string;
+    email: string;
+    contact: string;
+    isConfirmed: boolean;
+}
+
+export interface Itodo {
+    todoid: string;
+    title: string;
 }

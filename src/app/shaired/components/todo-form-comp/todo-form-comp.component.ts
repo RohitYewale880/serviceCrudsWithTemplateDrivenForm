@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Itodo } from '../../models/todo';
+
 import { NgForm } from '@angular/forms';
 import { TodoserviceService } from '../../service/todoservice.service';
 import { SnakbarService } from '../../service/snakbar.service';
+import { Itodo } from '../../models/ofreturn';
 
 @Component({
   selector: 'app-todo-form-comp',

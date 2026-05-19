@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Itodo } from '../models/todo';
+
 import { Observable, of, Subject } from 'rxjs';
-import { Ires } from '../models/ofreturn';
+import { Ires, Itodo } from '../models/ofreturn';
 
 @Injectable({
   providedIn: 'root'
@@ -39,10 +39,10 @@ export class TodoserviceService {
       title: "qui ullam ratione quibusdam voluptatem quia omnis"
     }
   ]
-  EditSubject$ : Subject<Itodo> = new Subject<Itodo>()
+  EditSubject$: Subject<Itodo> = new Subject<Itodo>()
   constructor() { }
 
-  addTodo(todo:Itodo) : Observable<Ires>{
+  addTodo(todo: Itodo): Observable<Ires<Itodo>> {
     this.todoarra.push(todo)
     return of({
       msg: ` The Todo item with id ${todo.todoid} is added Successfully!!!`,
@@ -50,8 +50,8 @@ export class TodoserviceService {
     })
   }
 
-  removetodo(id:string){
-    let getindex =this.todoarra.findIndex((ele) => ele.todoid === id)
+  removetodo(id: string): Observable<Ires<Itodo>> {
+    let getindex = this.todoarra.findIndex((ele) => ele.todoid === id)
     let item = this.todoarra.splice(getindex, 1)
     return of({
       msg: ` The Todo item with id ${item[0].todoid} is removed Successfully!!!`,
@@ -59,7 +59,7 @@ export class TodoserviceService {
     })
   }
 
-  updatetodo(todo:Itodo){
+  updatetodo(todo: Itodo): Observable<Ires<Itodo>> {
     let getindex = this.todoarra.findIndex((ele) => ele.todoid === todo.todoid)
     this.todoarra[getindex] = todo
 
